@@ -15,14 +15,14 @@ TOOLS -MY SQL WORKBENCH AND SERVER
 
 Key Performance Indicators (KPIs) Explored
 
--Average Attrition Rate for All Departments
--Average Hourly Rate of Male Research Scientists
--Attrition Rate vs. Monthly Income Statistics
--Average Working Years for Each Department
--Department-Wise Number of Employees
--Count of Employees Based on Education Field
--Job Role vs. Work Life Balance
--Attrition Rate vs. Years Since Last Promotion
--Gender Percentage of Employees
--Department/Job Role-Wise Satisfaction
+-Average Attrition Rate for All Departments.
+-Average Hourly Rate of Male Research Scientists.
+-Attrition Rate vs. Monthly Income Statistics.
+-Average Working Years for Each Department.
+-Department-Wise Number of Employees.
+-Count of Employees Based on Education Field.
+-Job Role vs. Work Life Balance.
+-Attrition Rate vs. Years Since Last Promotion.
+-Gender Percentage of Employees.
+-Department/Job Role-Wise Satisfaction.
 
