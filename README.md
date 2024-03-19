@@ -16,7 +16,6 @@ TOOLS -MY SQL WORKBENCH AND SERVER
 Key Performance Indicators (KPIs) Explored
 
 -Average Attrition Rate for All Departments.
-
 -Average Hourly Rate of Male Research Scientists.
 
 -Attrition Rate vs. Monthly Income Statistics.
