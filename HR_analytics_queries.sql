@@ -3,7 +3,7 @@ create database HRproject;
 SELECT * FROM hr_1 ;
 SELECT * FROM hr_2 ;
 
-# Average Attrition rate for all Departments (KPI 1)
+-- Average Attrition rate for all Departments -- 
 SELECT 
 department,
 concat(round((AVG(CASE WHEN attrition = 'yes' THEN 1 ELSE 0 END)*100),2),'%') AS avg_attrition_rate
@@ -11,13 +11,15 @@ FROM hr_1
 GROUP BY 
 department;
 
-# Average Hourly rate of Male Research Scientist (KPI 2)
+
+-- Average Hourly rate of Male Research Scientist --
 SELECT 
 round(AVG(HourlyRate),2) AS avg_hourly_rate
 FROM hr_1
 WHERE Gender = 'Male' AND JobRole = 'Research Scientist';
 
-# Attrition rate Vs Monthly income stats (KPI 3)
+
+-- Attrition rate Vs Monthly income stats --
 SELECT
 Department,
 MonthlyIncome,
@@ -26,26 +28,30 @@ FROM hr_1 INNER JOIN hr_2 ON hr_1.EmployeeNumber = hr_2.`Employee ID`
 GROUP BY 
 department;
 
-# Average working years for each Department (KPI 4)
+
+-- Average working years for each Department --
 SELECT 
 hr_1.Department,
 ROUND(AVG(hr_2.TotalWorkingYears),2) AS avg_working_years
 FROM hr_1 INNER JOIN hr_2 ON hr_1.EmployeeNumber = hr_2.`Employee ID`
 GROUP BY hr_1.Department;
 
-# Departmentwise No of Employees (KPI 5)
+
+-- Departmentwise No of Employees --
 SELECT Department,
 count(EmployeeCount) AS no_of_employees
 FROM hr_1
 GROUP BY hr_1.Department;
 
-# Count of Employees based on Educational Fields (KPI 6)
+
+-- Count of Employees based on Educational Fields --
 SELECT EducationField,
 count(EmployeeCount) AS no_of_employees
 FROM hr_1
 GROUP BY EducationField;
 
-# Job Role Vs Work life balance (KPI 7)
+
+-- Job Role Vs Work life balance --
 SELECT 
 hr_1.JobRole AS job_role,
 SUM(CASE WHEN hr_2.WorkLifeBalance = 4 THEN 1 ELSE 0 END) AS excellent_count,
@@ -55,7 +61,8 @@ SUM(CASE WHEN hr_2.WorkLifeBalance = 1 THEN 1 ELSE 0 END) AS poor_count
 FROM hr_1 INNER JOIN hr_2 ON hr_1.EmployeeNumber = hr_2.`Employee ID`
 GROUP BY hr_1.JobRole;
 
-# Attrition rate Vs Year since last promotion relation (KPI 8)
+
+-- Attrition rate Vs Year since last promotion relation --
 SELECT 
 YearsSinceLastPromotion,
 COUNT(*) AS total_employees,
@@ -66,14 +73,16 @@ hr_1 INNER JOIN hr_2 ON hr_1.EmployeeNumber = hr_2.`Employee ID`
 GROUP BY 
 YearsSinceLastPromotion;
 
-# Gender based Percentage of Employee (KPI 9)
+
+-- Gender based Percentage of Employee --
 SELECT 
 Gender,
 round((COUNT(Gender) * 100.0 / (SELECT COUNT(*) FROM hr_1)), 3) AS percentage_of_employee
 FROM hr_1
 GROUP BY gender;
 
-# Deptarment / Job Role wise job satisfaction (KPI 11)
+
+-- Deptarment / Job Role wise job satisfaction --
 SELECT 
 Department,
 JobRole,
